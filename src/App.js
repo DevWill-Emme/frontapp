@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> ESTE ES EL PROYECTO VACIO!!! </h1>
+      <h2> Aun le faltan por instalar los pack que tienen q ver con redux </h2>
+      <h2> Aqui tienes algo, me dijiste q te diera algo y aqui esta </h2>
+      <h2> {":)"} </h2>
     </div>
   );
 }
