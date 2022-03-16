@@ -1,4 +1,4 @@
-import { SHOW_SIDEBAR,CHANGE_PATH } from '../actions/constants'
+import { SHOW_SIDEBAR,CHANGE_PATH } from './constants'
 
 const initialState = {
   sidebar: ""

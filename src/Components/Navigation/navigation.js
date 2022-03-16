@@ -6,7 +6,6 @@ import logo from './logo.png'
 class Navigation extends Component{
   render(){
     const { sidebar,onClickMenuButton,setChangePath,path } = this.props.prop
-    console.log(path);
     return (
       <div>
         <div className={`logobar`}>

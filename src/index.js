@@ -1,23 +1,22 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDom from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import Thunk from "redux-thunk";
-
+import { createStore,combineReducers, applyMiddleware } from "redux";
+import * as serviceWorker from './serviceWorker';
+import  Thunk from 'redux-thunk'
 import "./index.css";
-import App from "./App";
+import App from "./Container/App";
+import { Rsidebar,Rpath } from "./Components/Navigation/reducers";
+import { Rtables } from "./Components/Consultas/reducer";
+import { Rselect } from "./Components/Navigation/Select/reducer";
 
-import { Rsidebar, Rpath } from "./Components/Navigation/reducers/reducers";
-//import { Rselect } from "./Components/Navigation/reducers/reducerSelect";
+const reducers = combineReducers({Rsidebar,Rpath,Rtables,Rselect})
+const store = createStore(reducers, applyMiddleware(Thunk))
 
-const reducers = combineReducers({ Rsidebar, Rpath });
-const store = createStore(reducers, applyMiddleware(Thunk));
+ReactDom.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>
+, document.getElementById('root'));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store = {store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+serviceWorker.register();

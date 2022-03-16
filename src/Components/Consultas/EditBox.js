@@ -24,7 +24,7 @@ class EditBox extends Component{
 
   delete = () =>{
     const { key } = this.state
-    fetch(`http://localhost:1270/del/${this.props.table}`,{
+    fetch(`http://localhost:3001/del/${this.props.table}`,{
       method: 'delete',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({key})
@@ -87,7 +87,7 @@ class EditBox extends Component{
     const get = id => document.getElementById(id)
 
     if(state.Validation === 'ok'){
-      fetch(`http://localhost:1270/edit/${this.props.table}`,{
+      fetch(`http://localhost:3001/edit/${this.props.table}`,{
       method: 'PUT',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(state) 

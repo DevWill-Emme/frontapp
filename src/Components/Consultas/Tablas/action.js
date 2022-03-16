@@ -36,7 +36,7 @@ const nextRow =(x,elemnt,column,table)=>{
 
   const edit =(x,tble)=>{
     x.innerHTML = 'wait..'
-    fetch(`http://localhost:1270/${tble}`,)
+    fetch(`http://localhost:3001/${tble}`,)
       .then(() => {
         x.innerHTML = 'edit>'
         return editbox(x.nextSibling)})

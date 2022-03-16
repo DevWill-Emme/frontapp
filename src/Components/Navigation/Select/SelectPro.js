@@ -3,12 +3,12 @@ import './style.css'
 import { connect } from 'react-redux';
 
 import { getData } from '../../Consultas/action'
-import { selectTable } from '../actions/actionSelect'
+import { selectTable } from './action'
 
 const states = state =>({
-  req: true,//state.Rtables.ReqPending,
-  err: false,//state.Rtables.error,
-  selected: 'Servicio'//state.Rselect.selected
+  req: state.Rtables.ReqPending,
+  err: state.Rtables.error,
+  selected: state.Rselect.selected
 })
 
 const actions = dispatch =>({
@@ -51,7 +51,7 @@ class SelectPro extends Component {
 
   render(){
     const { err,req } = this.props
-
+    console.log(this.state.Display);
     return(
       <div className={`selectContainer ${this.props.sbar}`}>
         <div      
